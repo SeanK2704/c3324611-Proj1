@@ -15,45 +15,46 @@ int main() //Main code is written inside.
 	
 	return 0;
 }
-
 #include <stdio.h>
 int main()
 {
     char message[80];
-    int  rotatorN;
+    int keyX;
 
-    printf("Enter String: \n");
+    printf("Enter String: "); // Enter message to be encrypted
+    gets(message); // 
     printf("Enter Number: ");
-    scanf("%i", &rotatorN);
+    scanf("%c", &keyX);
 
-    int n = 0, rotateSwap = 0;
+    int x = 0, keyChange = 0;
 
-    int i;
-    for(i=0; message[i] != '\0'; i++)
+    int b;
+    for(b=0; message[b] != "\0"; b++)
      {
-          if(message[i] >='a' && message[i] <='z')
+          if(message[b] >="a" && message[b] <="z")
              {
-                n = 'z' - message[i];
-                if( rotatorN > n )
+                x = "z" - message[b];
+                if( keyX > x )
                  {
-                    rotateSwap = rotatorN - n - 1;
-                    message[i] = 'a';
-                    message[i] += rotateSwap;
+                    keyChange = keyX - x - 1;
+                    message[b] = "a";
+                    message[b] += keyChange;
                   }  
                else
-                message[i] += rotatorN;
+                message[b] += keyX;
 
 
                }
        }
 
       int j;
-      for(j = 0; message[j] !='\0'; j++)
+      for(j = 0; message[j] !="\0"; j++)
         {
-             printf("%c", message[j]);
+             printf("%c", message[j]); //Prints encoded message
         }
 
         printf("\n");
 
         return 0;
 }
+//Code finished
